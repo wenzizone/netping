@@ -20,10 +20,11 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span3">
-				<div class="well sidebar-nav">
-					<ul class="nav nav0list">
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">服务器配置</a></li>
+				<div class="well">
+					<ul class="nav nav-list">
+						<li class="nav-header">测试机房管理</li>
+						<li><a href="#">服务器查看</a></li>
+						<li><a href="#">服务器添加</a></li>				
 					</ul>
 				</div>
 			</div>
