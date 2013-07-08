@@ -5,12 +5,10 @@
 .pr-10 {padding-right: 10px;}
 .ml-10 {margin-left: 10px;}
 .pl-10 {padding-left: 10px;}
-.ast {
-    width: 150px;
-    text-align: right;
-    padding-top: 5px;
-}
+.mt-5 {margin-top: 5px;}
+.mb-5 {margin-bottom: 5px;}
+.block {display: block;}
 .deploy-btn {
-    width: 350px;
+    width: 400px;
     text-align: center;
 }

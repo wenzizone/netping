@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bootstrap 101 Template</title>
+	<title>Netping后台</title>
 	<base href="<?php echo base_url();?>" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,15 @@
 	<link href="static/css/main.css" rel="stylesheet" media="screen">
 	<script src="http://code.jquery.com/jquery.js"></script>
 	<script src="static/js/bootstrap.min.js"></script>
+	<!-- <script src="http://validatious.org/design/js/validatious.0.9.1.min.js?1256063644"></script> -->
+	<script src="static/js/validatious-custom-0.9.1.min.js"></script>
+	<script type="text/javascript">
+	v2.Field.prototype.successClass = 'success';
+	v2.Field.prototype.instant = true;
+	v2.Field.prototype.displayErrors = 1;
+	v2.Field.prototype.positionErrorsAbove = false;
+	v2.Fieldset.prototype.positionErrorsAbove = false;
+	</script>
 </head>
 <body style="padding-top:60px; padding-bottom:40px">
 	<div class="navbar navbar-inverse navbar-fixed-top">

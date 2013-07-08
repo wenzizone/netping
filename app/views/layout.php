@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="static/css/main.css" rel="stylesheet" media="screen">
+    <link href="static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap-datetimepicker.min.js"></script>
 </head>
 <body style="padding-top:60px; padding-bottom:40px">
     <div class="navbar navbar-inverse navbar-fixed-top">
