@@ -17,9 +17,43 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$layout_data['content_body'] = $this->load->view('index', '', true);
+	public function index() {
+
+		$province = array();
+		$idc = array();
+		$network = array();
+		$options = array(
+			'min_connect' => '最小值',
+			'avg_connect' => '平均值',
+			'max_connect' => '最大值',
+			'lost_packet' => '丢包率'
+		);
+
+		$this->load->model('db_model');
+
+
+		# 获取idc信息
+		$query = $this->db_model->query('SELECT server_ip,idc_name FROM net_test.tb_idcinfo WHERE idc_status="online"');
+		foreach ($query as $row) {
+			$idc[$row->server_ip] = $row->idc_name;
+		}
+		
+		
+		# 获取省份列表
+		$query = $this->db_model->query('SELECT DISTINCT province FROM tb_nettest where province is not NULL order by province');
+		foreach ($query as $row) {
+			array_push($province, $row->province);
+		}
+
+		#获取网络信息
+		$query = $this->db_model->query('SELECT name,alias FROM tb_netinfo');
+		foreach ($query as $row) {
+			$network[$row->alias] = $row->name;
+		}
+		//var_dump($network);
+		//exit();
+		$data = array('arrayidc' => $idc, 'arrayprovince' => $province, 'arraynetwork' => $network,'options' => $options);
+		$layout_data['content_body'] = $this->load->view('index', $data, true);
 		$this->load->view('layout', $layout_data);
 	}
 }

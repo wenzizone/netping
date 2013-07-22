@@ -33,8 +33,8 @@
 				<div class="well">
 					<ul class="nav nav-list">
 						<li class="nav-header">测试机房管理</li>
-						<li><a href="#">服务器查看</a></li>
-						<li><a href="/index.php/admin/add_servers">服务器添加</a></li>				
+						<li><a href="/index.php/admin/idc/list_servers">服务器查看</a></li>
+						<li><a href="/index.php/admin/idc/add_servers">服务器添加</a></li>				
 					</ul>
 				</div>
 			</div>
