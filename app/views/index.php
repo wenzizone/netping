@@ -26,7 +26,7 @@
 	<!-- 各种查询 -->
 		<div class="left">
 			<?php foreach ($options as $k=>$v): ?><label>
-			<input type="radio" name="Radio" value="<?php echo $k;?>"
+			<input type="radio" name="options" value="<?php echo $k;?>"
 				id="RadioGroup1_0" /><?php echo $v;?></label>
 			<?php endforeach ?>
 		</div>
@@ -36,7 +36,7 @@
 		</div>
 
 		<div id="timestart" class="input-append left"> 
-			<input data-format="yyyy-MM-dd" type="text" id='stime'></input>
+			<input data-format="yyyy-MM-dd" type="text" id='stime' readonly></input>
 			<span class="add-on">
 				<i data-time-icon="icon-time" data-date-icon-"icon-calendar"></i>
 			</span>
@@ -47,7 +47,7 @@
 		</div>
 
 		<div id="timeend" class="input-append left"> 
-			<input data-format="yyyy-MM-dd" type="text" id="etime"></input>
+			<input data-format="yyyy-MM-dd" type="text" id="etime" readonly></input>
 			<span class="add-on">
 				<i data-time-icon="icon-time" data-date-icon-"icon-calendar"></i>
 			</span>
@@ -59,5 +59,5 @@
 		<div class="clear" />
 	</form>
 </div>
-<div id="display" style="padding-left:50%">
+<div id="display">
 </div>

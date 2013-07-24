@@ -11,6 +11,7 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="static/js/highchart/highcharts.js"></script>
     <script src="static/js/main.js"></script>
 </head>
 <body style="padding-top:60px; padding-bottom:40px">
@@ -30,7 +31,7 @@
                     <li><a href="/index.php/#">按时间查看查看</a></li>                
                 </ul>
             </div>
-            <div class="span9">
+            <div>
                 <?= $content_body ?>
             </div>
         </div>
