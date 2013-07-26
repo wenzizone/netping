@@ -7,11 +7,15 @@
 .pl-10 {padding-left: 10px;}
 .mt-5 {margin-top: 5px;}
 .mb-5 {margin-bottom: 5px;}
+.mt-15 {margin-top: 10px;}
+.mt-50 {margin-top: 50px;}
 .block {display: block;}
 .deploy-btn {
     width: 400px;
     text-align: center;
 }
+
+.w-150 {width: 150px}
 
 .controls.error .control-label,
 .controls.error .help-block,

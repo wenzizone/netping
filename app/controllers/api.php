@@ -21,7 +21,7 @@ class Api extends CI_Controller {
 				$s_sql = sprintf("select test_time,%s from tb_nettest where src_ip='%s' and province='%s' and network='%s' and test_time between %s and %s order by test_time",$s_options,$value,$v,$s_network,$s_stime,$s_etime);
 				$query = $this->db_model->query($s_sql);
 				foreach ($query as $row) {
-					array_push($a_res, array((int)$row->test_time,(float)$row->$s_options));
+					array_push($a_res, array((int)$row->test_time*1000,(float)$row->$s_options));
 				}
 				$a_prov[$s_options][$v] = $a_res;
 			}

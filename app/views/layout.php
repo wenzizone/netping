@@ -31,7 +31,8 @@
                     <li><a href="/index.php/#">按时间查看查看</a></li>                
                 </ul>
             </div>
-            <div>
+            <div class="clear" />
+            <div style="width:1190px">
                 <?= $content_body ?>
             </div>
         </div>
