@@ -1,4 +1,4 @@
-<form class="form-horizontal validate" method="post" action="admin/api/add_server.php">
+<form class="form-horizontal validate" method="post" action="/admin/api/add_server">
     <fieldset>
         <legend>添加测试机房服务器</legend>
         <div class="control-group">

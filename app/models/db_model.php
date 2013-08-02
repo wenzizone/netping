@@ -2,7 +2,7 @@
 class Db_model extends CI_Model {
 	function __construct()
 	{
-        $this->load->database();
+
     }
 
     public function insert_entry($data) {
@@ -14,3 +14,6 @@ class Db_model extends CI_Model {
     	return $query->result();
     }
 }
+
+/* End of file db_model.php */
+/* Location: ./app/model/db_model.php */

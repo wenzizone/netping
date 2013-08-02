@@ -1,5 +1,13 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+define('_URL_',         '/');
+define('_VIEWS_',       _URL_.'views/');
+define('_CSS_',         _VIEWS_.'/static/css/');
+define('_LIBS_',        _VIEWS_.'libs/');
+define('_JS_',          _VIEWS_.'static/js/');
+define('_IMG_',      _VIEWS_.'static/img/');
+
+
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes

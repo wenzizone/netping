@@ -15,7 +15,7 @@ var time_chart = {
             'Drag your finger over the plot to zoom in'
     },
     xAxis: {
-        type: 'datetime',
+        //type: 'datetime',
         //maxZoom: 14 * 24 * 3600000, // fourteen days
         title: {
             text: null
@@ -96,13 +96,13 @@ $(function() {
 	});
 });
 
-//form submit
+//time check form submit
 $(function() {
 	$('#btnsubmit').click(function() {
 		$('#display').html('');
-		$('#display').append('<div id="loading" style="padding-left:50%"><div class="left"><h3>loading</h3></div><div class="left" style="padding-top:20px"><img src="/static/img/loading.gif" border="0"></div></div>');
+		$('#display').append('<div id="loading" style="padding-left:50%"><div class="left"><h3>loading</h3></div><div class="left" style="padding-top:20px"><img src="/views/static/img/loading.gif" border="0"></div></div>');
 		$.ajax({
-			url: '/index.php/api/get_detail',
+			url: '/api/get_detail',
 			type: 'post',
 			data: $('#frm_timecheck').serialize() + "&stime="+$('#stime').val()+"&etime="+$('#etime').val(),
 			dataType: "json",
@@ -115,6 +115,7 @@ $(function() {
 					$('#display').append('<div id=render'+n+'></div>');
 					chart.title.text = "机房"+i+"的ping值";
 					chart.chart.renderTo = "render"+n;
+                    chart.xAxis.type = 'datetime';
 					chart.series = [];
 					for(ii in data[i]) {
 						console.log(ii);
@@ -127,8 +128,49 @@ $(function() {
 					}
 					$('#loading').remove();
 					var chart = new Highcharts.Chart(chart);
+                    n = n + 1;
 				}
 			}
 		});
 	});
+});
+
+//city check form submit
+$(function() {
+    $('#citychecksubmit').click(function() {
+        $('#display').html('');
+        $('#display').append('<div id="loading" style="padding-left:50%"><div class="left"><h3>loading</h3></div><div class="left" style="padding-top:20px"><img src="/views/static/img/loading.gif" border="0"></div></div>');
+        $.ajax({
+            url: '/api/get_city_check_detail',
+            type: 'post',
+            data: $('#frm_timecheck').serialize() + "&stime="+$('#stime').val()+"&etime="+$('#etime').val(),
+            dataType: "json",
+            success: function (data) {
+                //console.log(data);
+                var n = 0;
+                for (i in data) {
+                    //console.log(data[i]);
+                    var chart = time_chart;
+                    $('#display').append('<div id=render'+n+'></div>');
+                    chart.yAxis.title.text = i+" 的值";
+                    chart.chart.renderTo = "render"+n;
+                    chart.series = [];
+                    for(ii in data[i]) {
+                        console.log(data[i][ii]['city']);
+                        chart.title.text = "机房"+ii+"的ping值";
+                        chart.xAxis.categories = data[i][ii]['city'];
+                        chart.series.push({'name':ii,'data':data[i][ii]['data']});
+                        //for (iii in data[i][ii]) {
+                        //    console.log(iii);
+                        //    chart.series.push({'name':iii,'data':data[i][ii][iii]});
+                        //}
+                        
+                    }
+                    $('#loading').remove();
+                    var chart = new Highcharts.Chart(chart);
+                    n = n + 1;
+                }
+            }
+        });
+    });
 });
